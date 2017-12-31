@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button,TextInput } from 'react-native';
 
 export default class App extends React.Component {
   
@@ -30,6 +30,18 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Text>Pondus Mobile App!</Text>
         <Text>Hoş Geldin {this.state.userName}!</Text>
+
+        <TextInput style = {styles.input}
+               placeholder = "Email"
+               placeholderTextColor = "#fff"
+               autoCapitalize = "none"
+               onChangeText = {this.handleEmail}/>
+
+        <TextInput style = {styles.input}
+               placeholder = "Password"
+               placeholderTextColor = "#fff"
+               autoCapitalize = "none"
+               onChangeText = {this.handleEmail}/>
         <Button 
           onPress={this.onStartPress}
           title="Başla"
@@ -44,8 +56,18 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#00A7EE',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input: {
+    alignSelf: 'stretch',
+    margin: 15,
+    padding:10,
+    height: 40,
+    borderColor: '#fff',
+    borderWidth: 1,
+
+ },
+
 });
